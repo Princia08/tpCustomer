@@ -1,9 +1,9 @@
 package mg.itu.princiaram.tp1.jsf;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import mg.itu.princiaram.tp1.entity.Customer;
 import mg.itu.princiaram.tp1.service.CustomerManager;
 import jakarta.inject.Named;
-import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * Ce bean est responsable de fournir les données des clients à afficher dans l'interface utilisateur.
  */
 @Named(value = "customerBean")
-@ViewScoped
+@ApplicationScoped
 public class CustomerBean implements Serializable {
 
     private List<Customer> customerList;
