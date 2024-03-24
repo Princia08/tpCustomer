@@ -1,7 +1,7 @@
-package mg.itu.tpcustomer.jsf;
+package mg.itu.princiaram.tp1.jsf;
 
-import mg.itu.tpcustomer.entity.Customer;
-import mg.itu.tpcustomer.service.CustomerManager;
+import mg.itu.princiaram.tp1.entity.Customer;
+import mg.itu.princiaram.tp1.service.CustomerManager;
 import jakarta.inject.Named;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;

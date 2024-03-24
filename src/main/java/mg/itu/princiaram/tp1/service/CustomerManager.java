@@ -1,6 +1,6 @@
-package mg.itu.tpcustomer.service;
+package mg.itu.princiaram.tp1.service;
 
-import mg.itu.tpcustomer.entity.Customer;
+import mg.itu.princiaram.tp1.entity.Customer;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mg.itu.tpcustomer.entity;
+package mg.itu.princiaram.tp1.entity;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
