@@ -9,8 +9,8 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 
 /**
- * Gestionnaire des clients.
- * Ce service gère les opérations liées aux clients tels que la création, la récupération et la mise à jour.
+ * Gestionnaire des clients. Ce service gère les opérations liées aux clients
+ * tels que la création, la récupération et la mise à jour.
  */
 @RequestScoped
 public class CustomerManager {
@@ -20,6 +20,7 @@ public class CustomerManager {
 
     /**
      * Persiste un client dans la base de données.
+     *
      * @param customer Le client à persister.
      */
     @Transactional
@@ -29,6 +30,7 @@ public class CustomerManager {
 
     /**
      * Récupère tous les clients de la base de données.
+     *
      * @return La liste de tous les clients.
      */
     public List<Customer> getAllCustomers() {
@@ -36,13 +38,18 @@ public class CustomerManager {
         return query.getResultList();
     }
 
+    public Customer findById(int idCustomer) {
+        return em.find(Customer.class, idCustomer);
+    }
+
     /**
      * Met à jour les informations d'un client dans la base de données.
+     *
      * @param customer Le client à mettre à jour.
      * @return Le client mis à jour.
      */
     @Transactional
     public Customer update(Customer customer) {
-       return em.merge(customer);
+        return em.merge(customer);
     }
 }
