@@ -4,7 +4,9 @@
  */
 package mg.itu.princiaram.tp1.jsf;
 
+import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import java.io.Serializable;
 import mg.itu.princiaram.tp1.entity.Customer;
 import mg.itu.princiaram.tp1.service.CustomerManager;
@@ -13,6 +15,8 @@ import mg.itu.princiaram.tp1.service.CustomerManager;
  *
  * @author princ
  */
+@Named
+@ViewScoped
 public class CustomerDetailsBean implements Serializable {
 
     private int idCustomer;
