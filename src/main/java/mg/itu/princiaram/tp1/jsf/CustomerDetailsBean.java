@@ -8,8 +8,11 @@ import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
+import java.util.List;
 import mg.itu.princiaram.tp1.entity.Customer;
+import mg.itu.princiaram.tp1.entity.Discount;
 import mg.itu.princiaram.tp1.service.CustomerManager;
+import mg.itu.princiaram.tp1.service.DiscountManager;
 
 /**
  *
@@ -21,9 +24,13 @@ public class CustomerDetailsBean implements Serializable {
 
     private int idCustomer;
     private Customer customer;
-
+    private List<Discount> discount;
+    
     @Inject
     private CustomerManager customerManager;
+    
+    @Inject
+    private DiscountManager discountManager;
 
     public int getIdCustomer() {
         return idCustomer;
@@ -57,5 +64,16 @@ public class CustomerDetailsBean implements Serializable {
 
     public void loadCustomer() {
         this.customer = customerManager.findById(idCustomer);
+    }
+
+    /**
+     * Retourne la liste de tous les Discount.
+     * @return 
+     */
+    public List<Discount> getDiscount() {
+        if(discount == null) {
+            discount = discountManager.getAllDiscounts();
+        }
+        return discount;
     }
 }
