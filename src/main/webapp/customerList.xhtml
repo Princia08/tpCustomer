@@ -29,7 +29,7 @@
                     <f:facet name="header">
                         <h:outputText value="Id"/>
                     </f:facet>
-                    <h:inputText value="#{customer.customerId}"/>
+                    <h:link outcome="customerDetails?idCustomer=#{customer.customerId}" value="#{customer.customerId}"/>
                 </p:column>
 
                 <p:column sortBy="#{customer.name}" filterBy="#{customer.name}" filterMatchMode="contains">
