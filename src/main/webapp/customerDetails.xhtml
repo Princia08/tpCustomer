@@ -13,7 +13,8 @@
     </h:head>
     <h:body>
         <f:view>
-            <h:form>
+            <h:outputText value="Aucun client avec l'id #{customerDetailsBean.idCustomer} !" rendered='#{customerDetailsBean.customer == null}'/>
+            <h:form rendered='#{customerDetailsBean.customer != null}'>
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="CustomerId:" for="customerId" />
@@ -46,12 +47,11 @@
                                        itemLabel="#{discount.code} (#{discount.rate}%)" 
                                        itemValue="#{discount}" />  
                     </h:selectOneMenu>
-
-                    <h:button id="back" value="Revenir à la liste" outcome="customerList"/>
                     <h:commandButton id="update" value="Enregistrer" action="#{customerDetailsBean.update}"/>
                 </h:panelGrid>
                 <h:messages/>
             </h:form>
+            <h:button id="back" value="Revenir à la liste" outcome="customerList"/>
         </f:view>
     </h:body>
 </html>
